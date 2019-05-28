@@ -20,39 +20,6 @@
 </head>
 
 
-<?php
-require("connection/dbConnect.php");
-if(isset($_POST['add'])){ 
-
-$nam = mysqli_real_escape_string($con,$_POST['name']);
-$add = mysqli_real_escape_string($con,$_POST['address']);
-$por = mysqli_real_escape_string($con,$_POST['port']);
-$flag = mysqli_real_escape_string($con,$_POST['flagcode']);
-$username = mysqli_real_escape_string($con,$_POST['username']);
-$password = mysqli_real_escape_string($con,$_POST['password']);
-$remote = mysqli_real_escape_string($con,$_POST['remote']);
-$params = mysqli_real_escape_string($con,$_POST['params']);
-
-
-//Insert Query of SQL
-$sql = "INSERT INTO serverdata (Name,Address,Port,Flag,Username,Password,RemoteProxy,ServerMessage) VALUES ('$nam', '$add','$por','$flag','$username','$password' '$remote','$params')";
-
-if(mysqli_query($con, $sql)){
- echo "data inserted";
-}
-else{
-  echo "error";
-
-}
-}
-?>
-
-
-
-
-
-
-
 
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
